@@ -1,0 +1,7 @@
+"0","#getMutationsByLineage"
+"0","df=getMutationsByLineage(pangolin_lineage=""P.1"", frequency=0.8)"
+"1","Retrieving data..."
+"1"," "
+"1","
+"
+"0","print(head(df))"

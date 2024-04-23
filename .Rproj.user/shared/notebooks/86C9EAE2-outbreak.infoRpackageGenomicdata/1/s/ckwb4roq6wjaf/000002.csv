@@ -1,0 +1,14 @@
+"0","#getSubmissionDateByLocation"
+"0","df=getSubmissionDateByLocation(pangolin_lineage=""B.1.1.7"", location=""California"")"
+"1","Retrieving data..."
+"1"," "
+"1","
+"
+"1","Retrieving data..."
+"1"," "
+"1","
+"
+"2","Coercing LHS to a list"
+"2","Error in invokeRestart(""muffleWarning"") : 
+  no 'restart' 'muffleWarning' found
+"

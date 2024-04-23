@@ -1,0 +1,12 @@
+"0","#asks to call authenticateUser(), after that it takes you to the GISAID website to authenticate/register if you dont have an account."
+"0","authenticateUser()"
+"1","Please open this url in a browser and authenticate with your GISAID credentials.
+
+https://gpsapi-test.epicov.org/epi3/gps_authenticate/FZIYPNXDSJRMMZKUWWWXUYQZLTMODEZBDDUZLXXBAWYTWWRHXXRPNODXPRSCYQRGDOANGYBVKHOMYHETADRZUEWPAUKBHYEEABHUHIGLCZGFSIFCFQXXTAHUNQCUBSKX"
+"1","
+
+Waiting for authentication... [press CTRL-C to abort]"
+"1","
+Authenticated successfully!
+"
+"0","#add this to documentation?"

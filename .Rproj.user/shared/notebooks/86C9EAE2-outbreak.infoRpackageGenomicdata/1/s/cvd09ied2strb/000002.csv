@@ -1,0 +1,7 @@
+"0","#getGlobalPrevalence"
+"0","df=getGlobalPrevalence(pangolin_lineage = ""B.1.1.7"", mutations = ""S:E484K"")"
+"1","Retrieving data..."
+"1"," "
+"1","
+"
+"0","print(head(df))"

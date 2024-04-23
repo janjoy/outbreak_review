@@ -1,0 +1,119 @@
+---
+title: "outbreak.R"
+author: "Janet Joy"
+date: "9/24/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## R Markdown
+
+```{r}
+#install devtools as a start, else error "Error in loadNamespace(x) : there is no package called ‘devtools’"
+#install.packages("devtools")
+#restart after installing devtools!
+```
+
+```{r}
+#devtools::install_github("outbreak-info/R-outbreak-info/outbreakinfo", ref="auth")
+library(outbreakinfo)
+#outbreak.info R package: Genomic data
+```
+
+```{r}
+getSeqCounts(location=NULL, cumulative=NULL, subadmin=NULL)
+#asks to call authenticateUser(), after that it takes you to the GISAID website to authenticate/register if you don't have an account.
+authenticateUser()
+#add this to documentation?
+```
+
+```{r}
+df=getSeqCounts(location="United States")
+print(head(df))
+```
+
+```{r}
+#getGlobalPrevalence
+df=getGlobalPrevalence(pangolin_lineage = "B.1.1.7", mutations = "S:E484K")
+print(head(df))
+```
+
+```{r}
+#getPrevalenceByLocation
+df=getPrevalenceByLocation(pangolin_lineage = "P.1", location = "Brazil")
+print(head(df))
+```
+
+
+```{r}
+#plotPrevalenceByLocation
+p=plotPrevalenceByLocation(pangolin_lineage = "P.1", location = "Brazil")
+show(p)
+```
+
+
+```{r}
+#getCumulativeBySubadmin
+df=getCumulativeBySubadmin(pangolin_lineage="B.1.1.7", location="California")
+print(head(df))
+```
+
+```{r}
+#getCollectionDateByLocation
+#authenticateUser()
+df=getCollectionDateByLocation(pangolin_lineage="B.1.1.7", location="California")
+print(head(df))
+```
+
+```{r}
+#getSubmissionDateByLocation
+df=getSubmissionDateByLocation(pangolin_lineage="B.1.1.7", location="California")
+print(head(df))
+```
+
+```{r}
+#getLag
+#Description:
+
+#Returns the daily log between collection and submission dates by location
+df=getLag(location="California")
+print(head(df))
+#asks for authenticateUser() -> goes to login page, put in your credentials , close page and come back.
+```
+
+```{r}
+#getMutationDetails
+#Description:
+
+#Returns details of mutation(s)
+df=getMutationDetails(mutations=c("S:E484K", "S:N501Y"))
+print(head(df))
+```
+
+```{r}
+#getMutationAcrossLineage
+#Description:
+
+#Returns prevalence of a mutation across lineages by location
+df=getMutationAcrossLineage(mutations="S:N501Y", location="United States")
+print(head(df))
+```
+
+```{r}
+#getMutationsByLineage
+df=getMutationsByLineage(pangolin_lineage="P.1", frequency=0.8)
+print(head(df))
+```
+
+```{r}
+#getAllLineagesByLocation
+df=getAllLineagesByLocation(location = "India", other_threshold=0.03, nday_threshold=60, other_exclude="P.1")
+print(head(df))
+```
+
+```{r}
+#getGenomicData
+df=getGenomicData(query_url="prevalence-by-location", location="United Kingdom", pangolin_lineage = "B.1.1.7")
+print(head(df))
+```
